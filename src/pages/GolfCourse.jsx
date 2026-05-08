@@ -1,5 +1,6 @@
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
+import usePageTitle from '../hooks/usePageTitle';
 import heroDesktop from '../hero image dekstop.jpg';
 import featureImg from '../Feature - Driving Range.jpg';
 import logo from '../logo utama.png';
@@ -681,6 +682,7 @@ const HoleCarousel = ({ inView }) => {
 
 // ── GolfCourse Component ─────────────────────────────────────────
 const GolfCourse = () => {
+  usePageTitle('Golf Course');
   const aboutRef = useRef(null);
   const aboutInView = useInView(aboutRef, { once: true, margin: '-100px' });
   const featuresRef = useRef(null);
@@ -1165,6 +1167,7 @@ const AboutUs = () => {
 
   return (
     <section
+      id="about"
       ref={ref}
       style={{ backgroundColor: '#0f1a14', position: 'relative', overflow: 'hidden' }}
       className="gc-section-pad"
